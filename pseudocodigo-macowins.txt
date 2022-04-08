@@ -1,0 +1,75 @@
+--Punto 1:
+class Prenda {
+Condicion condicion
+Double precioPrenda
+TipoDePrenda tipo
+precio() { 
+return  condicion.precioVenta (precioPrenda)
+	}
+}
+
+// Composición: (El estado de la prenda puede cambiar a través del tiempo: puede pasar de nueva a promoción o a liquidación)
+Inteface Condicion {
+ abstract precioVenta(precioBase);
+}
+
+class Nueva extends Condicion {
+Double precioVenta (Double precioBase) {
+return precioBase;
+	}
+}
+
+class Promocion extends Condicion {
+Double descuento;
+Double precioVenta (Double precioBase) {
+return precioBase  – descuento;
+	}	
+}
+
+class Liquidacion extends Condicion {
+Double precioVenta (Double precioBase ) {
+return precioBase * 0,5 ;
+	}	
+}
+
+--Punto 2: // Tipos de prendas que vende el negocio
+new Prenda(TipoDePrenda)
+public enum TipoDePrenda {
+   SACO, PANTALON, CAMISA
+}
+
+--Punto 3 // Ventas pago con tarjeta o efectivo
+
+class Venta {
+  List<Prenda> prendas;
+  Double montoAPagar() { 
+    return prendas.sum(prenda-> prenda.precioDeVenta(precioBase)
+	}
+}
+
+class VentaConTarjeta extends Venta{
+  Integer cantidadCuotas;
+  Double coeficienteFijo;
+ 
+ @Override
+  Double montoAPagar() {
+    return coeficienteTarjeta * cantidadCuotas  + 0.01 * super() + super()
+	}
+}
+
+--Punto 4//  Ventas del día para el negocio
+class NegocioDeRopa {
+  List<Venta> ventas;
+
+  void registrarVenta(Venta venta){
+    ventas.add (venta)
+	}
+
+  Double gananciaDelDia() {
+    return ventasDelDia() .sum(venta -> venta.montoAPagar())
+ 	 }
+
+  List<Venta> ventasDelDia(fecha){
+    return ventas .filter(venta -> venta.esDeHoy(fecha))
+	}
+}
