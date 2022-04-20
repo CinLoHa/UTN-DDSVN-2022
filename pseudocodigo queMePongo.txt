@@ -1,0 +1,45 @@
+class Prenda {
+	private TipoDePrenda tipo
+	private CategoriaDePrenda categoria
+	private MaterialDePrenda material
+	private ColorPrincipal colorPrincipal
+	private ColorSecundario colorSecundario
+
+	public Prenda(TipoDePrendaPrenda tipo, MaterialDePrenda material, ColorPrincipal colorPrincipal, Color Secundario colorSecundario) { 
+		this.tipoDePrenda = requireNonNull(tipoDePrendaPrenda, "Colocar el tipo  de prenda es obligatorio");
+		this.material = requireNonNull(material, "Colocar el tipo  de material es obligatorio");
+		this.colorPriincipal= requireNonNull(colorPrimario, ""Colocar el color principal es obligatorio");
+		this.colorSecundario = colorSecundario;
+			    }
+
+ } 
+
+   public enum CatergoriaDePrenda {
+   PARTE SUPERIOR, PARTE INFERIOR, ACCESORIO, CALZADO
+	}  
+	
+
+public enum TipoDePrenda {
+	ZAPATO(CatergoriaDePrenda.CALZADO),
+	ZAPATILLA(CatergoriaDePrenda.CALZADO),
+	BOTAS(CatergoriaDePrenda.CALZADO),
+	CAMISA MANGA CORTA(CatergoriaDePrenda.PARTE SUPERIOR),
+	MUSCULOSA(CatergoriaDePrenda.ACCESORIO),
+	REMERA MANGA CORTA(CatergoriaDePrenda.PARTE SUPERIOR),
+	REMERA MANGA LARGACatergoriaDePrenda.PARTE SUPERIOR),
+	POLLERA(CatergoriaDePrenda.PARTE NFERIOR),
+	PANTALON(CatergoriaDePrenda.PARTE INFERIOR),
+	PANUELO(CatergoriaDePrenda.ACCESORIO),
+	ANTEOJOS(CatergoriaDePrenda.ACCESORIO);
+	
+	}
+		
+	
+	public enum MaterialDePrenda {
+   ALGODON, LANA, DENIM, POLIESTER
+	}  
+
+
+
+
+
